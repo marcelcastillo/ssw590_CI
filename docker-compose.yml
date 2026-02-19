@@ -1,0 +1,23 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: simple-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  web:
+    build: .
+    container_name: simple-web
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/simple_node_mongo
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:
+

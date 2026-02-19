@@ -1,0 +1,21 @@
+{
+  "name": "simple-node-mongo",
+  "version": "1.0.0",
+  "description": "Minimal Node.js + MongoDB app with Docker + tests for GitHub Actions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "jest --runInBand"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.0.0",
+    "supertest": "^6.3.4"
+  }
+}
+
